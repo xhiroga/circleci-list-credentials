@@ -1,0 +1,26 @@
+redash
+Set Up Project
+
+homelab
+Set Up Project
+
+pino
+Set Up Project
+
+viron
+Set Up Project
+
+vuls
+Set Up Project
+
+serverless-application-model
+Set Up Project
+
+vscode-bash-debug
+Set Up Project
+
+chamber
+Set Up Project
+
+cdk8s-core
+Set Up Project
