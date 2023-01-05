@@ -123,7 +123,7 @@ const app = async () => {
   const contexts = await getContexts();
   contexts.forEach(async (context) => {
     const items = await getContextEnvvars(context.id);
-    console.log(`{project: ${context.name}, items: ${JSON.stringify(items)}}`);
+    console.log(`{context: ${context.name}, items: ${JSON.stringify(items)}}`);
   });
 };
 app();
