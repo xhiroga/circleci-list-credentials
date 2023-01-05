@@ -24,9 +24,9 @@ After that, save `projects.txt`.
 - `Set Up Project` will be ignored.
 - Only github.com projects are covered.
 
-### 3. Set project prefix
+### 3. Set variables
 
-Set `PROJECT_PREFIX` in `.env`.
+Set other variables in `.env`.
 
 ### 4. Run script
 
