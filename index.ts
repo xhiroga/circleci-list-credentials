@@ -21,7 +21,6 @@ const readConnectedProjects = () => {
     const line = linesFromEnd[i];
     if (["", "Follow Project", "Unfollow Project"].includes(line)) {
       i++;
-      continue;
     } else if (line === "Set Up Project") {
       i = i + 2;
     } else {
