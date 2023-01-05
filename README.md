@@ -17,12 +17,7 @@ Copying projects name like this.
 
 https://user-images.githubusercontent.com/13391129/210705946-31dfbaf8-6abf-4590-ae36-98a049fcad0c.mov
 
-After that, save `projects.txt`.
-
-#### Note
-
-- `Set Up Project` will be ignored.
-- Only github.com projects are covered.
+After that, paste it to `projects.txt` and save.
 
 ### 3. Set variables
 
