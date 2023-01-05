@@ -1,4 +1,5 @@
 # circleci-list-credentials
+
 Listing up CircleCI Credentials
 
 ## How to run
@@ -16,7 +17,7 @@ Copying projects name like this.
 
 https://user-images.githubusercontent.com/13391129/210705946-31dfbaf8-6abf-4590-ae36-98a049fcad0c.mov
 
-After that, save `projects.txt`. 
+After that, save `projects.txt`.
 
 #### Note
 
@@ -31,10 +32,7 @@ Set `PROJECT_PREFIX` in `.env`.
 
 ```shell
 npm i
-npm run app > logs/credentials.log
+npx ts-node index.ts > logs/credentials.jsonl
 ```
 
 ### (Optional) Deactivate CircleCI API Token
-
-  
-
