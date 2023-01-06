@@ -27,7 +27,7 @@ Set other variables in `.env`.
 
 ```shell
 npm i
-npx ts-node index.ts > logs/credentials.jsonl
+npm run app > logs/credentials.jsonl
 ```
 
 ### (Optional) Deactivate CircleCI API Token
