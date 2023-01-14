@@ -39,7 +39,8 @@ const getProjectEnvvars = async (
     authorization: `Basic ${Buffer.from(API_TOKEN).toString("base64")}`,
   };
   const response = await fetch(
-    `https://circleci.com/api/v2/project/${CVS}/${OWNER_NAME}/${projectName}/envvar${pageToken ? `?page-token=${pageToken}` : ""
+    `https://circleci.com/api/v2/project/${CVS}/${OWNER_NAME}/${projectName}/envvar${
+      pageToken ? `?page-token=${pageToken}` : ""
     }`,
     { headers }
   );
@@ -64,7 +65,8 @@ const getProjectSettings = async (
     authorization: `Basic ${Buffer.from(API_TOKEN).toString("base64")}`,
   };
   const response = await fetch(
-    `https://circleci.com/api/v1.1/project/${CVS}/${OWNER_NAME}/${projectName}/settings${pageToken ? `?page-token=${pageToken}` : ""
+    `https://circleci.com/api/v1.1/project/${CVS}/${OWNER_NAME}/${projectName}/settings${
+      pageToken ? `?page-token=${pageToken}` : ""
     }`,
     { headers }
   );
@@ -77,7 +79,8 @@ const getContexts = async (pageToken?: string): Promise<any[]> => {
     authorization: `Basic ${Buffer.from(API_TOKEN).toString("base64")}`,
   };
   const response = await fetch(
-    `https://circleci.com/api/v2/context?owner-slug=${CVS}/${OWNER_NAME}&owner-type=${OWNER_TYPE}${pageToken ? `&page-token=${pageToken}` : ""
+    `https://circleci.com/api/v2/context?owner-slug=${CVS}/${OWNER_NAME}&owner-type=${OWNER_TYPE}${
+      pageToken ? `&page-token=${pageToken}` : ""
     }`,
     {
       headers,
@@ -104,7 +107,8 @@ const getContextEnvvars = async (
     authorization: `Basic ${Buffer.from(API_TOKEN).toString("base64")}`,
   };
   const response = await fetch(
-    `https://circleci.com/api/v2/context/${contextId}/environment-variable${pageToken ? `?page-token=${pageToken}` : ""
+    `https://circleci.com/api/v2/context/${contextId}/environment-variable${
+      pageToken ? `?page-token=${pageToken}` : ""
     }`,
     { headers }
   );
@@ -127,16 +131,16 @@ const getContextEnvvars = async (
 const app = async () => {
   // Projects
   const connectedProjects = readConnectedProjects();
-  connectedProjects.forEach(async (projectName) => {
-    const envVars = await getProjectEnvvars(projectName);
-    const configAWS = await getProjectSettings(projectName);
-    console.log(JSON.stringify({ project: projectName, envVars: envVars, awsConfig: configAWS }));
+  connectedProjects.forEach(async (project) => {
+    const envVars = await getProjectEnvvars(project);
+    const awsConfig = await getProjectSettings(project);
+    console.log(JSON.stringify({ project, envVars, awsConfig }));
   });
   // Contexts
   const contexts = await getContexts();
   contexts.forEach(async (context) => {
     const items = await getContextEnvvars(context.id);
-    console.log(JSON.stringify({ context: context.name, items: items }));
+    console.log(JSON.stringify({ context: context.name, items }));
   });
 };
 app();
