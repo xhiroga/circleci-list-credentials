@@ -130,13 +130,13 @@ const app = async () => {
   connectedProjects.forEach(async (projectName) => {
     const envVars = await getProjectEnvvars(projectName);
     const configAWS = await getProjectSettings(projectName);
-    console.log(`{ "project": "${projectName}", "envVars": ${JSON.stringify(envVars)}, "awsConfig": ${JSON.stringify(configAWS)}},`);
+    console.log(JSON.stringify({ project: projectName, envVars: envVars, awsConfig: configAWS }));
   });
   // Contexts
   const contexts = await getContexts();
   contexts.forEach(async (context) => {
     const items = await getContextEnvvars(context.id);
-    console.log(`{context: ${context.name}, items: ${JSON.stringify(items)}}`);
+    console.log(JSON.stringify({ context: context.name, items: items }));
   });
 };
 app();
