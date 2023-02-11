@@ -1,6 +1,8 @@
 # circleci-list-credentials
 
-Listing up CircleCI Credentials
+Use [CircleCI-Env-Inspector](https://github.com/CircleCI-Public/CircleCI-Env-Inspector).
+
+Note: [CircleCI-Env-Inspector](https://github.com/CircleCI-Public/CircleCI-Env-Inspector) does not show legacy AWS configs.
 
 ## How to run
 
